@@ -14,8 +14,7 @@
 For this project, I will be making an e-commerce website for videogames. I will begin my backend api that will be responsible for bringing in the images or gifs to the front-end. I will then utilize jQuery to make on click buttons to have totals add up. 
 
 ## Time/Priority Matrix 
-
-Include a full list of features that have been [prioritized](https://res.cloudinary.com/doaftkgbv/image/upload/v1583773146/ValueVSComplexity_u2inhx.png) based on the `Time and Priority` Matix.  This involves drawing a a square.  In the middle of the square, on the x axis draw a line.  The most left part of the line should start with 0hrs and the end of the line should include 2hrs.  This line will be used to estimate how much time any one feature will take to complete. 
+[Prioritized](https://res.cloudinary.com/stephaniev/image/upload/v1596221373/BACKEND_-_Time_Priority_Matrix_tvbp0q.png) 
 
 ## Functional Components
 
