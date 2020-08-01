@@ -2,8 +2,8 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Description, Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Incomplete
-|Day 2| Begin Working On Back-end | Incomplete
+|Day 1| Project Description, Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
+|Day 2| Begin Working On Back-end | Complete
 |Day 3| Working RestAPI | Incomplete
 |Day 4| Core Application Structure (HTML, CSS, etc.) | Incomplete
 |Day 5| MVP & Bug Fixes | Incomplete
