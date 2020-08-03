@@ -25,6 +25,24 @@ mongoose.connect(mongoURI, mongoConfig, () => {
     console.log('MONGO IS CONNECTED')
 })
 
+//whitelist 
+const whiteList = ['http:localhost:3000/']
+const corsOptions = {
+    origin: function (origin, callback) {
+        if(whiteList.indexOf(origin) !== -1){
+            callback(null, true)
+        } else {
+            callback(new Error('not allowed by CORS'))
+        }
+    } 
+}
+
+//middleware
+app.use(cors())
+app.use(express.json())
+app.use(morgan('dev'))
+app.use(express.static('public'))
+
 
 
 app.get('/', (req, res) => {
@@ -35,3 +53,4 @@ app.listen(PORT, () => {
     console.log(`listening on ${PORT}`)
 })
 
+module.exports = mongoose
