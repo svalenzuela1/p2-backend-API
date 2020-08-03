@@ -12,12 +12,12 @@ const productSchema = new Schema ({
 })
 
 const cartSchema = new Schema ({
-     product:
+     product:[
         {
             name: {type: String}, 
             price: {type: Number},
             quantity: {type: Number}
-        },
+        }],
         
     orderSummary: 
         {

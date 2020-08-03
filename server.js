@@ -6,12 +6,17 @@ const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
 
+const router = require('./routes/routes.js')
+
+
 //.env file
 const PORT = process.env.PORT
 const NODE_ENV = process.env.NODE_ENV
 
 //the concatenation adds "" to the mongo database
 const mongoURI = process.env.mongoURI + "project2data"
+
+
 
 //mongoose connection 
 const db = mongoose.connection
@@ -43,12 +48,14 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static('public'))
 
+app.use('/', router)
 
-
+//this should show up in localhost or deployed website
 app.get('/', (req, res) => {
     res.send('backend works')
 })
 
+//listener
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`)
 })
