@@ -2,7 +2,8 @@
 
 const express = require('express');
 const mongoose = require('mongoose')
-
+const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
 
 app.get('/', (req, res) => {
@@ -12,3 +13,4 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
     console.log('listening on port')
 })
+
