@@ -62,5 +62,44 @@ const destroy = async (req, res) => {
 }
 }
 
-module.exports = {index, create, update, destroy}
+//cart functions
+const showCarts = async (req, res) => {
+    try{
+    const carts = await cartModel.find()
+    res.json(carts)
+    }catch(error){
+        res.status(400).send(error)
+    }
+}
+
+const showCartById = async (req, res) => {
+    try{
+    const cart = await cartModel.findById(req.params.id).populate("product")
+    res.json(cart)
+    }catch(error){
+        res.status(400).send(error)
+    }
+}
+
+const addItemToCart = async (req, res) => {
+    try{
+    const cart = await cartModel.findById(req.params.id)
+    cart.product.push(req.body.productToAdd)
+    await cart.save()
+    res.json(cart)
+    }catch(error){
+        res.status(400).send(error)
+    }
+}
+
+const createCart = async (req, res) => {
+    try{
+    const cart = await cartModel.create({})
+    res.json(cart)
+    }catch(error){
+        res.status(400).send(error)
+    }
+}
+
+module.exports = {createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy}
 

@@ -48,6 +48,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static('public'))
 
+//url to access api data
 app.use('/', router)
 
 //this should show up in localhost or deployed website

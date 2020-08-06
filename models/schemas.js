@@ -14,9 +14,8 @@ const productSchema = new Schema ({
 const cartSchema = new Schema ({
      product:[
         {
-            name: {type: String}, 
-            price: {type: Number},
-            quantity: {type: Number}
+                    type: Schema.Types.ObjectId,
+                    ref: 'productModel'
         }],
         
     orderSummary: 
@@ -24,8 +23,7 @@ const cartSchema = new Schema ({
             amountOfProducts: {type: Number},
             total: {type: Number},
             tax: {type: Number}
-
-        }
+        },
     
 });
 

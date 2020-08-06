@@ -52,3 +52,12 @@ products.forEach(product => {
     productModel.create(product)
     
 })
+
+let cart = [
+    {
+        
+    },
+    {
+
+    }
+]
