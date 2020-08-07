@@ -32,11 +32,37 @@ let products = [
         price: 79.99
     },
     {
-        name: "Yakuza3",
-        description: "Majima",
-        imageURL: "https://media.giphy.com/media/UsBXUJ7egKUmTJrYca/giphy.gif",
-        price: 49.99
+        name: "Yakuza",
+        description: "Kiryu Kazuma",
+        imageURL: "https://media.giphy.com/media/l4EpbzHgRgvDbrJvi/giphy.gif",
+        price: 50.00
+    },
+    {
+      name: "Skyrim",
+      description: "An Open World Environment",
+      imageURL: "https://media.giphy.com/media/TAdayXZ1EB9kc/giphy.gif",
+      price:  40.00
+    }, 
+    {
+        name:"Persona 5",
+        description: "A Classic.",
+        imageURL: "https://media.giphy.com/media/bYgZANGlM0BgI/giphy.gif",
+        price: 70.00
+    },
+    {
+        name:"Fallout",
+        description: "Get Your Own Pipboy",
+        imageURL: "https://media.giphy.com/media/eMVK22cBbgWzx8L1fw/giphy.gif",
+        price: 40.00
+    },
+    {
+        name: "Assassin's Creed Odyssey",
+        description: "Live Out Ancient Greece As Kassandra Or Alexios",
+        imageURL: "https://media.giphy.com/media/8vXcKsDcNwqKBMZ6ms/giphy.gif",
+        price: 50.00
+
     }
+        
 ]
 
 products, (error, response) => {
@@ -53,11 +79,3 @@ products.forEach(product => {
     
 })
 
-let cart = [
-    {
-        
-    },
-    {
-
-    }
-]
