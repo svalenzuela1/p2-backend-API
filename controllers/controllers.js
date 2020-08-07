@@ -62,6 +62,14 @@ const destroy = async (req, res) => {
 }
 }
 
+const productOnly = async (req, res) => {
+    try{
+        const product = await productModel.find()
+        res.status(200).json(product)
+    }catch(error){
+        res.status(400).send(error)
+    }
+}
 //cart functions
 const showCarts = async (req, res) => {
     try{
@@ -111,5 +119,5 @@ const deleteItems = async (req, res) => {
     res.status(400).send(error)
 }
 }
-module.exports = {deleteItems, createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy}
+module.exports = {productOnly, deleteItems, createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy}
 
