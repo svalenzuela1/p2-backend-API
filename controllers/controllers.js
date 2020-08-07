@@ -101,5 +101,15 @@ const createCart = async (req, res) => {
     }
 }
 
-module.exports = {createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy}
+const deleteItems = async (req, res) => {
+    try{
+    const cart = await cartModel.findByIdAndDelete(req.params.id)
+    res.json(deleteItems)
+
+} catch(error){
+    
+    res.status(400).send(error)
+}
+}
+module.exports = {deleteItems, createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy}
 

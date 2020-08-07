@@ -1,4 +1,4 @@
-const {createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy} = require('../controllers/controllers.js')
+const {deleteItems, createCart, addItemToCart, showCarts, showCartById, index, create, update, destroy} = require('../controllers/controllers.js')
 
 const express = require('express')
 
@@ -21,6 +21,8 @@ router.get('/carts/:id', showCartById)
 router.post('/carts', createCart)
 
 router.put('/carts/:id', addItemToCart)
+
+router.delete('/:id', deleteItems)
 
 module.exports = router;
 
