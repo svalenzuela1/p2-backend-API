@@ -15,7 +15,7 @@ const cartSchema = new Schema ({
      product:[
         {
                     type: Schema.Types.ObjectId,
-                    ref: 'productModel'
+                    ref: 'Product'
         }],
         
     orderSummary: 
@@ -28,9 +28,9 @@ const cartSchema = new Schema ({
 });
 
 //create the model for the Schema
-const productModel = model('productModel', productSchema);
+const productModel = model('Product', productSchema);
 
-const cartModel = model('cartModel', cartSchema)
+const cartModel = model('Cart', cartSchema)
 
 //export the Schema
 module.exports = {productModel, cartModel}

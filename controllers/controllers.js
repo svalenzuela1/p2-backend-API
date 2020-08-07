@@ -5,7 +5,7 @@ const index = async (req, res) => {
 
     const indexModel = {
         product: await productModel.find({}),
-        cart: await cartModel.find({})
+        cart: await cartModel.find({}).populate('product')
     }
 
     res.status(200).json(indexModel)
@@ -62,6 +62,8 @@ const destroy = async (req, res) => {
 }
 }
 
+
+//NEED TO TARGET PRODUCT FOR CART 
 const productOnly = async (req, res) => {
     try{
         const product = await productModel.find()
@@ -73,7 +75,7 @@ const productOnly = async (req, res) => {
 //cart functions
 const showCarts = async (req, res) => {
     try{
-    const carts = await cartModel.find()
+    const carts = await cartModel.find().populate("product")
     res.json(carts)
     }catch(error){
         res.status(400).send(error)
@@ -94,7 +96,8 @@ const addItemToCart = async (req, res) => {
     const cart = await cartModel.findById(req.params.id)
     cart.product.push(req.body.productToAdd)
     await cart.save()
-    res.json(cart)
+    const updatedCart = await cartModel.findById(req.params.id).populate("product")
+    res.json(updatedCart)
     }catch(error){
         res.status(400).send(error)
     }
@@ -112,7 +115,7 @@ const createCart = async (req, res) => {
 const deleteItems = async (req, res) => {
     try{
     const cart = await cartModel.findByIdAndDelete(req.params.id)
-    res.json(deleteItems)
+    res.json(cart)
 
 } catch(error){
     
